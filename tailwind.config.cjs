@@ -12,10 +12,14 @@ module.exports = {
         grey: '#F7F7F7',
         sec: '#26E8C6',
         darkRed: '#ED7777',
+        yel: '#ffc107',
       },
       boxShadow: {
         dark: '0 5px 15px rgba(0, 0, 0, 0.2)',
         light: ' 0 5px 15px rgba(0, 0, 0, 0.1)',
+      },
+      screens: {
+        md: '1008px',
       },
     },
   },

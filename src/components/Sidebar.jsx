@@ -3,6 +3,7 @@ import { links } from '../utils'
 import logo from '../assets/logo.png'
 import { useState } from 'react'
 import useAppContext from '../context/appcontext'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   const { setIsSidebar, isSidebar } = useAppContext()
@@ -40,11 +41,11 @@ const Sidebar = () => {
                       <span className='tracking-widest'>{z.label}</span>
                     </div>
                     {click ? (
-                      <button className='trans bg-black text-white border-l px-6 py-2 hover:bg-[#ffc107]'>
+                      <button className='trans bg-black text-white border-l px-6 py-2 hover:bg-yel'>
                         <FaMinus />
                       </button>
                     ) : (
-                      <button className='trans border-l px-6 py-2 hover:bg-[#ffc107]'>
+                      <button className='trans border-l px-6 py-2 hover:bg-yel'>
                         <FaPlus />
                       </button>
                     )}
@@ -57,16 +58,16 @@ const Sidebar = () => {
                       {z.items.map((t, index) => {
                         return (
                           <article key={index}>
-                            <a
+                            <Link
                               onClick={() => setIsSidebar(false)}
-                              href={z.url}
-                              className='trans px-6 py-2 capitalize text-xl hover:bg-[#ffc107] border block'
+                              to={t.link}
+                              className='trans px-6 py-2 capitalize text-xl hover:bg-yel border block'
                             >
                               <span className='text-blue-900/60 pr-4 text-2xl'>
                                 {t.icon}
                               </span>
                               <span className='tracking-widest'>{t.name}</span>
-                            </a>
+                            </Link>
                           </article>
                         )
                       })}
@@ -80,8 +81,8 @@ const Sidebar = () => {
 
             return (
               <li key={index}>
-                <a
-                  href={z.url}
+                <Link
+                  to={z.url}
                   className='trans px-6 py-2 capitalize text-xl hover:bg-[#ffc107] border block'
                   onClick={() => setIsSidebar(false)}
                 >
@@ -89,7 +90,7 @@ const Sidebar = () => {
                     {z.icon}
                   </span>
                   <span className='tracking-widest'>{z.label}</span>
-                </a>
+                </Link>
               </li>
             )
           })}
