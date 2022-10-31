@@ -1,7 +1,11 @@
 import { FaHome, FaRegQuestionCircle } from 'react-icons/fa'
 import { HiOutlineBookOpen } from 'react-icons/hi'
 import { BsFillCreditCard2FrontFill } from 'react-icons/bs'
-import { RiContactsFill, RiCustomerService2Line } from 'react-icons/ri'
+import {
+  RiContactsFill,
+  RiCustomerService2Line,
+  RiPagesLine,
+} from 'react-icons/ri'
 import {
   MdOutlinePolicy,
   MdOutlineProductionQuantityLimits,
@@ -12,7 +16,7 @@ export const links = [
   {
     label: 'pages',
     url: '/',
-    icon: <FaHome />,
+    icon: <RiPagesLine />,
     items: [
       { name: 'about us', link: '/about', icon: <HiOutlineBookOpen /> },
       { name: 'contact', link: '/contact', icon: <RiContactsFill /> },
