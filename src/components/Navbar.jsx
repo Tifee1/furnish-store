@@ -4,9 +4,19 @@ import { FiUserPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import useAppContext from '../context/appcontext'
 import { links } from '../utils'
+import CartBtns from './cart/CartBtns'
 
 const Navbar = () => {
-  const { setIsSidebar } = useAppContext()
+  const { setIsSidebar, openSubmenu } = useAppContext()
+
+  // const displaySubmenu = (e) => {
+  //   const text = e.currentTarget.textContent
+  //   const temp = e.currentTarget.getBoundingClientRect()
+  //   const center = (temp.left + temp.right) / 2
+  //   const bottom = temp.bottom - 6
+  //   openSubmenu(center, bottom, text)
+  // }
+
   return (
     <nav className='w-full flex justify-between items-center p-6 mt-6 md:container md:max-w-7xl mx-auto'>
       <Link to='/'>
@@ -20,24 +30,31 @@ const Navbar = () => {
       </button>
       <ul className='hidden md:flex md:justify-between md:items-center'>
         {links.map((item, index) => {
+          if (item.label === 'pages') {
+            return (
+              <li
+                // onMouseOver={() => {
+                //   displaySubmenu()
+                // }}
+                key={index}
+                className='trans uppercase px-3 text-lg font-bold tracking-widest hover:text-yel'
+              >
+                <button className='page-nav uppercase'>{item.label}</button>
+              </li>
+            )
+          }
+
           return (
             <li
               key={index}
-              className='trans uppercase px-3 text-xl font-bold tracking-widest hover:text-yel'
+              className='trans uppercase px-3 text-lg font-bold tracking-widest hover:text-yel'
             >
               <Link to={item.url}>{item.label}</Link>
             </li>
           )
         })}
       </ul>
-      <div className='hidden md:flex md:justify-between md:items-center text-pry-100 text-4xl'>
-        <button className='btn shadow-none hover:text-yel pr-4'>
-          <FaShoppingCart />
-        </button>
-        <button className='btn shadow-none hover:text-yel pr-4'>
-          <FiUserPlus />
-        </button>
-      </div>
+      <CartBtns />
     </nav>
   )
 }

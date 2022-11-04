@@ -1,9 +1,11 @@
-import { FaMinus, FaPlus, FaTimes } from 'react-icons/fa'
+import { FaMinus, FaPlus, FaShoppingCart, FaTimes } from 'react-icons/fa'
 import { links } from '../utils'
 import logo from '../assets/logo.png'
 import { useState } from 'react'
 import useAppContext from '../context/appcontext'
 import { Link } from 'react-router-dom'
+import { FiUserPlus } from 'react-icons/fi'
+import CartBtns from './cart/CartBtns'
 
 const Sidebar = () => {
   const { setIsSidebar, isSidebar } = useAppContext()
@@ -95,6 +97,9 @@ const Sidebar = () => {
             )
           })}
         </ul>
+        <div className='my-12'>
+          <CartBtns />
+        </div>
       </aside>
     </main>
   )

@@ -106,6 +106,28 @@ h4 {
   .show-sidebar {
     @apply z-[999] translate-x-0;
   }
+  .submenu {
+    @apply bg-white shadow-dark absolute p-8 -translate-x-1/2 z-[3] top-[4rem] left-[50%] transition-all duration-[0.3s] ease-linear rounded-2xl hidden;
+  }
+  .show {
+    @apply block;
+  }
+}
+.submenu::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--clr-white);
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hello {
+  background: green;
 }
 
 @tailwind utilities;
