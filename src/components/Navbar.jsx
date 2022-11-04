@@ -54,7 +54,9 @@ const Navbar = () => {
           )
         })}
       </ul>
-      <CartBtns />
+      <div className='hidden md:block'>
+        <CartBtns />
+      </div>
     </nav>
   )
 }
