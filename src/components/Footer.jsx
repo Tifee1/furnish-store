@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <div className='bg-[#111111] text-slate-50'>
-        <section className='w-[90vw] max-w-[500px] tm:max-w-6xl mx-auto  px-4 pt-20 grid tm:grid-cols-3 gap-10'>
+        <section className='tm:w-[90vw] tm:max-w-7xl mx-auto  px-4 pt-20 grid tm:grid-cols-3 gap-10'>
           <article className='pb-16'>
             <h3 className='uppercase tracking-widest pb-2'>furnish</h3>
             <div className='bg-yel h-1 w-[50px]'></div>
@@ -36,7 +36,7 @@ const Footer = () => {
               </li>
             </ul>
           </article>
-          <article className='pb-16 w-1/2 max-w-[300px]'>
+          <article className='pb-16 w-1/2 tm:w-full tm:max-w-[100%] max-w-[300px]'>
             <h3 className='uppercase tracking-widest pb-2'>contact us</h3>
             <div className='bg-yel h-1 w-[50px]'></div>
             <p className='text-slate-400 pt-2'>
@@ -67,7 +67,10 @@ const Footer = () => {
       <section className='bg-[#333333] py-8 text-center text-grey tracking-widest'>
         <h3>
           Furnish by{' '}
-          <a href='https://github.com/tifee1' className='text-yel underline'>
+          <a
+            href='https://github.com/tifee1'
+            className='text-yel underline bg-inherit'
+          >
             TIFEE
           </a>{' '}
           &copy; {new Date().getFullYear()}

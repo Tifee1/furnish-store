@@ -16,6 +16,7 @@ svg {
 body {
   font-family: 'Open Sans', sans-serif;
   background: #f4f3f3;
+  /* background: url(./assets/bg.png) top center #f4f3f3;*/
   color: var(--clr-grey-1);
   line-height: #222;
   font-size: 0.875rem;
@@ -83,6 +84,18 @@ h4 {
     transform: rotate(360deg);
   }
 }
+/*@keyframes enlarge {
+  to {
+    transform: scale(1.5);
+  }
+
+.read {
+  animation: enlarge 10s linear infinite;
+}
+
+
+
+}*/
 
 .trans {
   transition: all 0.3s linear;
@@ -112,7 +125,20 @@ h4 {
   .show {
     @apply block;
   }
+  .page {
+    @apply min-h-[calc(100vh-720px)];
+  }
+  .section {
+    @apply py-20 grid items-center justify-center;
+  }
+  .underline {
+    @apply bg-yel h-2 w-[100px] mx-auto mt-3;
+  }
+  .contact-input {
+    @apply bg-inherit border border-black rounded-md px-3 py-2 placeholder:capitalize my-2;
+  }
 }
+
 .submenu::before {
   content: '';
   display: block;
@@ -126,8 +152,63 @@ h4 {
   left: 50%;
   transform: translateX(-50%);
 }
-.hello {
-  background: green;
-}
 
 @tailwind utilities;
+
+.carousel.carousel-slider .control-arrow {
+  top: 50%;
+  height: 50px;
+  color: #fff;
+  font-size: 26px;
+  margin-top: 0;
+  padding: 0 20px;
+  border-radius: 50%;
+}
+.carousel.carousel-slider .control-arrow:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.control-next.control-arrow {
+  margin-right: 10px;
+}
+.control-prev.control-arrow {
+  margin-left: 10px;
+}
+
+.carousel-root {
+  position: relative;
+}
+.carousel {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.control-dots {
+  display: none;
+}
+.legend {
+  display: none;
+}
+
+.thumb {
+  border-radius: 50%;
+  height: 60px;
+  width: 30px;
+}
+.carousel .thumb {
+  border: 3px solid #333;
+}
+.carousel .thumb.selected {
+  border: 3px solid #fff;
+}
+.carousel .thumb:hover {
+  border: 3px solid #fff;
+}
+
+@media screen and (min-width: 1008px) {
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(./assets/inner_page_banner.jpg) center/cover;
+  }
+}

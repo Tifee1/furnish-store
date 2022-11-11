@@ -1,10 +1,13 @@
-import { FaHome, FaRegQuestionCircle } from 'react-icons/fa'
-import { HiOutlineBookOpen } from 'react-icons/hi'
+import { FaHome, FaRegQuestionCircle, FaAward } from 'react-icons/fa'
+import { HiOutlineBookOpen, HiOutlineBriefcase } from 'react-icons/hi'
 import { BsFillCreditCard2FrontFill } from 'react-icons/bs'
+import { SlDiamond, SlWallet } from 'react-icons/sl'
 import {
   RiContactsFill,
   RiCustomerService2Line,
   RiPagesLine,
+  RiExchangeDollarFill,
+  RiTeamFill,
 } from 'react-icons/ri'
 import {
   MdOutlinePolicy,
@@ -31,4 +34,37 @@ export const links = [
     icon: <MdOutlineProductionQuantityLimits />,
   },
   { label: 'checkout', url: '/checkout', icon: <BsFillCreditCard2FrontFill /> },
+]
+
+export const chooseUs = [
+  {
+    label: 'best quality',
+    icon: <SlDiamond />,
+    text: 'Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.',
+  },
+  {
+    label: 'experienced',
+    icon: <HiOutlineBriefcase />,
+    text: 'Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.',
+  },
+  {
+    label: 'expert team',
+    icon: <RiTeamFill />,
+    text: 'Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.',
+  },
+  {
+    label: 'affordable services',
+    icon: <SlWallet />,
+    text: 'Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.',
+  },
+  {
+    label: '90 days guaranteed',
+    icon: <RiExchangeDollarFill />,
+    text: 'Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.',
+  },
+  {
+    label: 'award winning',
+    icon: <FaAward />,
+    text: 'Exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo.',
+  },
 ]
