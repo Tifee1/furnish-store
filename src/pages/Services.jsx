@@ -8,7 +8,7 @@ const Services = () => {
       <section className='py-12 px-6'>
         <h2 className='font-bold text-center'>our services</h2>
         <div className='underline'></div>
-        <div className='grid tm:grid-cols-3 tm:gap-8 mt-12'>
+        <div className='grid tm:grid-cols-3 tm:gap-8 mt-12 max-w-6xl mx-auto'>
           {services.map((item, index) => {
             return (
               <div
