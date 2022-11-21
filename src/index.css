@@ -229,3 +229,11 @@ h4 {
   bottom: 50%;
   background: transparent;
 }
+
+.product:hover .link {
+  opacity: 1;
+}
+.product:hover .trans {
+  scale: 1.5;
+  opacity: 0.5;
+}
