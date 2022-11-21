@@ -1,5 +1,5 @@
 import Hero from '../components/Hero'
-import { faqItems } from '../utils'
+import { faqItems } from '../utils/constant'
 import FaqQuestion from '../components/FaqQuestion'
 
 const Faq = () => {

@@ -1,4 +1,4 @@
-import { chooseUs } from '../utils'
+import { chooseUs } from '../utils/constant'
 
 const Choose = () => {
   return (

@@ -1,4 +1,27 @@
+import Hero from '../components/Hero'
+import Img from '../assets/404_error_img.png'
+import { Link } from 'react-router-dom'
+import useProductContext from '../context/productContext'
+
 const Error = () => {
-  return <h2>Error</h2>
+  return (
+    <>
+      <Hero title='404' />
+      <div className='my-12 mx-8 grid justify-center'>
+        <img src={Img} alt='error' className='text-center' />
+      </div>
+      <h2 className='font-black mx-8 text-center uppercase'>
+        ooops, this page cannot be found!!!
+      </h2>
+      <div className='my-8 grid justify-center'>
+        <Link
+          to='/'
+          className='trans bg-yel text-white px-6 py-3 capitalize tracking-widest hover:bg-black rounded-md'
+        >
+          back home
+        </Link>
+      </div>
+    </>
+  )
 }
 export default Error

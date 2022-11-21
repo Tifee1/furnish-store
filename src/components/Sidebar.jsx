@@ -1,5 +1,5 @@
 import { FaMinus, FaPlus, FaShoppingCart, FaTimes } from 'react-icons/fa'
-import { links } from '../utils'
+import { links } from '../utils/constant'
 import logo from '../assets/logo.png'
 import { useState } from 'react'
 import useAppContext from '../context/appcontext'

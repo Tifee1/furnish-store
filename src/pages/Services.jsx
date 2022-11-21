@@ -1,5 +1,5 @@
 import Hero from '../components/Hero'
-import { services } from '../utils'
+import { services } from '../utils/constant'
 
 const Services = () => {
   return (

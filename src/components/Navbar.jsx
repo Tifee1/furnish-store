@@ -3,7 +3,7 @@ import { FaBars, FaShoppingCart } from 'react-icons/fa'
 import { FiUserPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import useAppContext from '../context/appcontext'
-import { links } from '../utils'
+import { links } from '../utils/constant'
 import CartBtns from './cart/CartBtns'
 
 const Navbar = () => {

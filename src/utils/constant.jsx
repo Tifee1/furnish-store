@@ -13,12 +13,12 @@ import {
   MdOutlinePolicy,
   MdOutlineProductionQuantityLimits,
 } from 'react-icons/md'
-import ChildRoom from './assets/childroom-furniture.png'
-import FloorPlanning from './assets/floor-planning.png'
-import Furniture from './assets/furniture.png'
-import InteriorDesign from './assets/interior-design.png'
-import Lighting from './assets/lighting.png'
-import OfficeFurniture from './assets/office-furniture.png'
+import ChildRoom from '../assets/childroom-furniture.png'
+import FloorPlanning from '../assets/floor-planning.png'
+import Furniture from '../assets/furniture.png'
+import InteriorDesign from '../assets/interior-design.png'
+import Lighting from '../assets/lighting.png'
+import OfficeFurniture from '../assets/office-furniture.png'
 
 export const links = [
   { label: 'home', url: '/', icon: <FaHome /> },
