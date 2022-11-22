@@ -131,6 +131,15 @@ h4 {
   .section {
     @apply py-20 grid items-center justify-center;
   }
+  .section-center {
+    @apply w-[90vw] max-w-7xl mx-auto;
+  }
+  @media (min-width: 1008px) {
+    .section-center {
+      @apply w-[95vw];
+    }
+  }
+
   .underline {
     @apply bg-yel h-2 w-[100px] mx-auto mt-3;
   }
