@@ -12,7 +12,7 @@ const DisplayProducts = (product) => {
         <img
           src={image}
           alt={name}
-          className='trans h-[225px] w-full rounded-md'
+          className='trans h-[175px] w-full rounded-md'
         />
         <Link
           to={`/products/${id}`}
