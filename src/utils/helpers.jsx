@@ -4,3 +4,10 @@ export const formatPrice = (price) => {
     currency: 'NGN',
   }).format(price / 100)
 }
+
+export const uniqueValues = (arr, val, select) => {
+  if (select) {
+    return ['all', ...new Set(arr.map((item) => item.colors).flat())]
+  }
+  return ['all', ...new Set(arr.map((item) => item[val]))]
+}

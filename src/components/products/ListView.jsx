@@ -27,7 +27,7 @@ const ListView = ({ products }) => {
               <p className='my-4'>{description.slice(0, 145)}...</p>
               <Link
                 to={`/product/${id}`}
-                className='trans bg-yel uppercase text-white p-1 rounded-md hover:bg-black tracking-wider'
+                className='trans bg-yel uppercase text-white px-2 py-1 rounded-md hover:bg-black tracking-wider'
               >
                 details
               </Link>
