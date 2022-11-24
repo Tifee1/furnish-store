@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { FaCheck, FaMinus, FaPlus } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import useCartContext from '../../context/cartContext'
 
 const AddToCart = ({ product }) => {
+  const { addToCart } = useCartContext()
+
   const { colors, stock } = product
   const [color, setColor] = useState(colors[0])
   const [amount, setAmount] = useState(1)
@@ -66,6 +69,7 @@ const AddToCart = ({ product }) => {
         <Link
           to='/cart'
           className='trans bg-yel text-white px-4 py-2 rounded-lg capitalize tracking-widest text-xl hover:bg-black'
+          onClick={() => addToCart(amount, color, product)}
         >
           add to cart
         </Link>
