@@ -11,3 +11,13 @@ export const uniqueValues = (arr, val, select) => {
   }
   return ['all', ...new Set(arr.map((item) => item[val]))]
 }
+
+export const getLocalStorage = (type) => {
+  let storage = localStorage.getItem(type)
+  if (!storage) {
+    storage = []
+  } else {
+    storage = JSON.parse(localStorage.getItem(type))
+  }
+  return storage
+}

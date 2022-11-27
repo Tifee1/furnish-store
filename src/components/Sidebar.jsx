@@ -2,13 +2,13 @@ import { FaMinus, FaPlus, FaShoppingCart, FaTimes } from 'react-icons/fa'
 import { links } from '../utils/constant'
 import logo from '../assets/logo.png'
 import { useState } from 'react'
-import useAppContext from '../context/appcontext'
+import useUserContext from '../context/usercontext'
 import { Link } from 'react-router-dom'
 import { FiUserPlus } from 'react-icons/fi'
 import CartBtns from './cart/CartBtns'
 
 const Sidebar = () => {
-  const { setIsSidebar, isSidebar } = useAppContext()
+  const { setIsSidebar, isSidebar } = useUserContext()
   const [click, setClick] = useState(false)
 
   return (

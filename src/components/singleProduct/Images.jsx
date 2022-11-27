@@ -4,7 +4,7 @@ const Images = ({ images = [{ url: '' }] }) => {
   const [index, setIndex] = useState(0)
 
   return (
-    <section>
+    <section className='mb-6'>
       <div className=' overflow-hidden'>
         <img
           src={images[index].url}

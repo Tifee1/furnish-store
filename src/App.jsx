@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Footer, Navbar, Sidebar, Submenu } from './components'
-import useAppContext from './context/appcontext'
+// import useAppContext from './context/usercontext'
 import {
   About,
   Cart,

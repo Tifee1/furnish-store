@@ -6,23 +6,9 @@ const CartItem = (product) => {
   const { toggleAmount, removeItem } = useCartContext()
   const { name, id, price, image, amount, stock, color, shipping } = product
 
-  const increase = () => {
-    let real = amount + 1
-    if (real > stock) {
-      real = stock
-    }
-    return real
-  }
-  const decrease = () => {
-    let real = amount - 1
-    if (real < 1) {
-      real = 1
-    }
-    return real
-  }
   return (
-    <article className='grid grid-cols-[200px_auto_auto] grid-rows-[75px] place-items-center gap-x-12 gap-y-4 mb-12'>
-      <div className='grid grid-cols-[75px_125px] grid-rows-[75px] items-center gap-x-4 tracking-widest'>
+    <article className='grid grid-cols-[200px_auto_auto] tm:grid-cols-[1fr_1fr_1fr_1fr_auto] grid-rows-[75px] place-items-center gap-x-12 gap-y-4 mb-12'>
+      <div className='grid grid-cols-[75px_125px] tm:grid-cols-[100px_200px] grid-rows-[75px] items-center gap-x-4 tracking-widest'>
         {/* Image */}
         <img src={image} alt={name} className='h-full w-full rounded-md' />
 
@@ -32,14 +18,18 @@ const CartItem = (product) => {
           <p className='flex justify-start items-center capitalize text-black/70'>
             color :{' '}
             <span
-              className='w-2 h-2 rounded-full ml-2 flex'
+              className='w-2 h-2 tm:w-3 tm:h-3 rounded-full ml-2 flex'
               style={{ background: color, opacity: '0.6' }}
             ></span>
           </p>
           {shipping && <p className='text-black/70'>Free Shipping</p>}
-          <p className='text-yel'>{formatPrice(price)}</p>
+          <p className='text-yel tm:hidden'>{formatPrice(price)}</p>
         </div>
       </div>
+
+      <h5 className='hidden tm:block text-yel tracking-widest'>
+        {formatPrice(price)}
+      </h5>
 
       {/* Amount Btns */}
       <div className='w-[75px] grid grid-cols-3 place-items-center font-semibold '>
@@ -57,7 +47,9 @@ const CartItem = (product) => {
           <FaPlus />
         </button>
       </div>
-
+      <h5 className='hidden tm:block tracking-widest text-center text-[#617d98]'>
+        {formatPrice(amount * price)}
+      </h5>
       {/* Delete Btn  */}
       <div>
         <button

@@ -56,6 +56,33 @@ const reducer = (state, action) => {
     const cart = state.cart.filter((item) => item.id !== action.payload)
     return { ...state, cart }
   }
+  if (action.type === 'CLEAR_CART') {
+    return { ...state, cart: [] }
+  }
+
+  if (action.type === 'UPDATE_TOTALS') {
+    const { noOfItems, totalAmount, shippingFee } = state.cart.reduce(
+      (total, curr) => {
+        total.noOfItems += curr.amount
+        total.totalAmount += curr.amount * curr.price
+        if (!curr.shipping) {
+          if (curr.amount < 9) {
+            total.shippingFee = 0.13 * curr.price
+          } else {
+            total.shippingFee = 0.3 * curr.price
+          }
+        }
+        return total
+      },
+      {
+        noOfItems: 0,
+        totalAmount: 0,
+        shippingFee: 0,
+      }
+    )
+
+    return { ...state, noOfItems, totalAmount, shippingFee }
+  }
 
   throw new Error(`no matching '${action.type} action type`)
 }

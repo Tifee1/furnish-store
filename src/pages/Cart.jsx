@@ -10,7 +10,7 @@ const Cart = () => {
     return (
       <main>
         <Hero title='cart' />
-        <section className='min-h-[calc(100vh-20rem)] text-center mt-8'>
+        <section className='min-h-[calc(100vh-20rem)] text-center mt-20'>
           <h2 className='font-semibold mb-8'>Your Cart is empty</h2>
           <Link
             to='/products'

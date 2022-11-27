@@ -1,13 +1,18 @@
 import React, { useContext, useState } from 'react'
 import { links } from '../utils/constant'
+import { useAuth0 } from '@auth0/auth0-react'
 
-const AppContext = React.createContext()
+const UserContext = React.createContext()
 
-export const AppProvider = ({ children }) => {
+export const UserProvider = ({ children }) => {
   const [isSidebar, setIsSidebar] = useState(false)
   const [isSubmenu, setIsSubmenu] = useState(false)
   const [link, setLink] = useState([])
   const [location, setLocation] = useState({})
+
+  const { user, isAuthenticated, isLoading } = useAuth0()
+
+  const isUser = user && isAuthenticated
 
   const openSubmenu = (center, bottom, text) => {
     setIsSubmenu(true)
@@ -21,7 +26,7 @@ export const AppProvider = ({ children }) => {
   }
 
   return (
-    <AppContext.Provider
+    <UserContext.Provider
       value={{
         isSidebar,
         setIsSidebar,
@@ -30,15 +35,17 @@ export const AppProvider = ({ children }) => {
         link,
         isSubmenu,
         closeSubmenu,
+        isUser,
+        isLoading,
       }}
     >
       {children}
-    </AppContext.Provider>
+    </UserContext.Provider>
   )
 }
 
-const useAppContext = () => {
-  return useContext(AppContext)
+const useUserContext = () => {
+  return useContext(UserContext)
 }
 
-export default useAppContext
+export default useUserContext

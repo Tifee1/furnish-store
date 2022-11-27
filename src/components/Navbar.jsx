@@ -2,12 +2,12 @@ import logo from '../assets/logo.png'
 import { FaBars, FaShoppingCart } from 'react-icons/fa'
 import { FiUserPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
-import useAppContext from '../context/appcontext'
+import useUserContext from '../context/usercontext'
 import { links } from '../utils/constant'
 import CartBtns from './cart/CartBtns'
 
 const Navbar = () => {
-  const { setIsSidebar, openSubmenu } = useAppContext()
+  const { setIsSidebar, openSubmenu } = useUserContext()
 
   // const displaySubmenu = (e) => {
   //   const text = e.currentTarget.textContent

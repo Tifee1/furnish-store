@@ -1,14 +1,17 @@
 import { FaShoppingCart } from 'react-icons/fa'
-import { FiUserPlus } from 'react-icons/fi'
+import { FiUserPlus, FiUserMinus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
-import useAppContext from '../../context/appcontext'
+import useUserContext from '../../context/usercontext'
 import useCartContext from '../../context/cartContext'
+import { useAuth0 } from '@auth0/auth0-react'
 
 const CartBtns = () => {
-  const { setIsSidebar } = useAppContext()
+  const { loginWithRedirect, logout } = useAuth0()
+
+  const { setIsSidebar, isUser } = useUserContext()
   const { noOfItems } = useCartContext()
   return (
-    <div className='grid grid-cols-2 w-[200px] mx-auto items-center text-pry-100 text-2xl'>
+    <div className='grid grid-cols-2 w-[220px] mx-auto items-center text-pry-100 text-2xl'>
       <Link
         to='/cart'
         className='btn shadow-none flex items-center'
@@ -22,11 +25,25 @@ const CartBtns = () => {
           </span>
         </span>
       </Link>
-      <button className='btn shadow-none hover:text-yel'>
-        <span className='pr-2'>Login</span>
+      {isUser ? (
+        <button
+          className='btn shadow-none hover:text-yel'
+          onClick={() => logout({ returnTo: window.location.origin })}
+        >
+          <span className='pr-2'>Logout</span>
 
-        <FiUserPlus />
-      </button>
+          <FiUserMinus />
+        </button>
+      ) : (
+        <button
+          className='btn shadow-none hover:text-yel'
+          onClick={() => loginWithRedirect()}
+        >
+          <span className='pr-2'>Login</span>
+
+          <FiUserPlus />
+        </button>
+      )}
     </div>
   )
 }

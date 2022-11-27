@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import useAppContext from '../context/appcontext'
+import useUserContext from '../context/usercontext'
 
 const Submenu = () => {
   const LinkRef = useRef(null)
-  const { location, link, isSubmenu } = useAppContext()
+  const { location, link, isSubmenu } = useUserContext()
 
   useEffect(() => {
     const curr = LinkRef.current
