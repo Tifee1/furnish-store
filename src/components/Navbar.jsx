@@ -7,7 +7,7 @@ import { links } from '../utils/constant'
 import CartBtns from './cart/CartBtns'
 
 const Navbar = () => {
-  const { setIsSidebar, openSubmenu } = useUserContext()
+  const { setIsSidebar, openSubmenu, isUser } = useUserContext()
 
   // const displaySubmenu = (e) => {
   //   const text = e.currentTarget.textContent
@@ -53,6 +53,11 @@ const Navbar = () => {
             </li>
           )
         })}
+        {isUser && (
+          <li className='trans uppercase px-3 text-lg font-bold tracking-widest hover:text-yel'>
+            <Link to='/checkout'>checkout</Link>
+          </li>
+        )}
       </ul>
       <div className='hidden md:block'>
         <CartBtns />

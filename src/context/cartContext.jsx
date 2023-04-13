@@ -1,4 +1,5 @@
 import React, { useContext, useReducer } from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import { getLocalStorage } from '../utils/helpers'
 import reducer from './cartReducer'
@@ -38,7 +39,13 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ ...state, addToCart, toggleAmount, removeItem, clearCart }}
+      value={{
+        ...state,
+        addToCart,
+        toggleAmount,
+        removeItem,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>

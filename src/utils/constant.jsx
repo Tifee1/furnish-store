@@ -39,7 +39,6 @@ export const links = [
     url: '/products',
     icon: <MdOutlineProductionQuantityLimits />,
   },
-  { label: 'checkout', url: '/checkout', icon: <BsFillCreditCard2FrontFill /> },
 ]
 
 export const chooseUs = [

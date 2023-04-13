@@ -6,9 +6,10 @@ import useUserContext from '../context/usercontext'
 import { Link } from 'react-router-dom'
 import { FiUserPlus } from 'react-icons/fi'
 import CartBtns from './cart/CartBtns'
+import { BsFillCreditCard2FrontFill } from 'react-icons/bs'
 
 const Sidebar = () => {
-  const { setIsSidebar, isSidebar } = useUserContext()
+  const { setIsSidebar, isSidebar, isUser } = useUserContext()
   const [click, setClick] = useState(false)
 
   return (
@@ -96,6 +97,20 @@ const Sidebar = () => {
               </li>
             )
           })}
+          {isUser && (
+            <li>
+              <Link
+                to='/checkout'
+                className='trans px-6 py-2 capitalize text-xl hover:bg-[#ffc107] border block'
+                onClick={() => setIsSidebar(false)}
+              >
+                <span className='text-blue-900/60 pr-4 text-2xl'>
+                  <BsFillCreditCard2FrontFill />
+                </span>
+                <span className='tracking-widest'>checkout</span>
+              </Link>
+            </li>
+          )}
         </ul>
         <div className='my-12'>
           <CartBtns />

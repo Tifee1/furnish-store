@@ -1,4 +1,5 @@
 import Hero from '../components/Hero'
+import Loading from '../components/Loading'
 import AllProducts from '../components/products/AllProducts'
 import FilterProducts from '../components/products/FilterProducts'
 import Sort from '../components/products/Sort'
@@ -8,11 +9,7 @@ const Products = () => {
   const { loading } = useProductContext()
 
   if (loading) {
-    return (
-      <section className='mb-12'>
-        <div className='loading'></div>
-      </section>
-    )
+    return <Loading />
   }
 
   return (

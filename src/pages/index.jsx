@@ -10,6 +10,8 @@ import Receipt from './Receipt'
 import Services from './Services'
 import SingleProduct from './SingleProduct'
 import Error from './Error'
+import AuthWrapper from './AuthWrapper'
+import PrivateWrapper from './PrivateWrapper'
 
 export {
   About,
@@ -24,4 +26,6 @@ export {
   Receipt,
   Services,
   Error,
+  AuthWrapper,
+  PrivateWrapper,
 }

@@ -9,6 +9,7 @@ export const UserProvider = ({ children }) => {
   const [isSubmenu, setIsSubmenu] = useState(false)
   const [link, setLink] = useState([])
   const [location, setLocation] = useState({})
+  const [ref, setRef] = useState({})
 
   const { user, isAuthenticated, isLoading } = useAuth0()
 
@@ -37,6 +38,9 @@ export const UserProvider = ({ children }) => {
         closeSubmenu,
         isUser,
         isLoading,
+        user,
+        ref,
+        setRef,
       }}
     >
       {children}

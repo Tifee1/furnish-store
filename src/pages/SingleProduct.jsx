@@ -6,6 +6,7 @@ import Images from '../components/singleProduct/Images'
 import Stars from '../components/singleProduct/Stars'
 import AddToCart from '../components/singleProduct/AddToCart'
 import { formatPrice } from '../utils/helpers'
+import Loading from '../components/Loading'
 
 const SingleProduct = () => {
   const {
@@ -32,11 +33,7 @@ const SingleProduct = () => {
   } = product
 
   if (singleLoading) {
-    return (
-      <section className='mb-12'>
-        <div className='loading'></div>
-      </section>
-    )
+    return <Loading />
   }
 
   return (
